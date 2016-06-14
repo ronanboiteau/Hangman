@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:04:48 2016 Ronan Boiteau
-** Last update Tue Jun 14 19:08:00 2016 Ronan Boiteau
+** Last update Tue Jun 14 22:20:38 2016 Ronan Boiteau
 */
 
 #include <unistd.h>
@@ -20,7 +20,7 @@ int	my_strlen(const char *str)
   return (i);
 }
 
-void	my_putchar(const char letter)
+void	my_putchar(char letter)
 {
   (void)write(1, &letter, 1);
 }
@@ -30,7 +30,7 @@ void	my_putstr(const char *str)
   (void)write(1, str, my_strlen(str));
 }
 
-void	my_putchar_fd(int fd, const char letter)
+void	my_putchar_fd(int fd, char letter)
 {
   (void)write(fd, &letter, 1);
 }

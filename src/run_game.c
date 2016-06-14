@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:57:53 2016 jamet alexis
+** Last update Tue Jun 14 22:19:44 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -23,7 +23,7 @@ static int	chk_input(const char *input)
   return (0);
 }
 
-static int	find_letter(char *word, char *word_disp, const char letter)
+static int	find_letter(char *word, char *word_disp, char letter)
 {
   int		idx;
   int		found;
@@ -45,7 +45,7 @@ static int	find_letter(char *word, char *word_disp, const char letter)
 
 static int	is_done(const char *word,
 			const char *word_disp,
-			const int try,
+			int try,
 			char *input)
 {
   int		idx;

@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:40:26 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:59:07 2016 jamet alexis
+** Last update Tue Jun 14 22:19:27 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -30,7 +30,7 @@ static  int	count_words(const char *file)
   return (nb_words);
 }
 
-static char	*get_word(const char *file, const int idx)
+static char	*get_word(const char *file, int idx)
 {
   int		size;
   int		tmp;

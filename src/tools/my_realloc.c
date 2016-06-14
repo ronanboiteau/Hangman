@@ -5,12 +5,12 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:15:10 2016 Ronan Boiteau
-** Last update Tue Jun 14 20:41:36 2016 Ronan Boiteau
+** Last update Tue Jun 14 22:20:30 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
 
-char		*my_realloc(char *old_str, const size_t size)
+char		*my_realloc(char *old_str, size_t size)
 {
   char		*str;
   int		idx;

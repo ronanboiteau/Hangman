@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:14:16 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:18:20 2016 Ronan Boiteau
+** Last update Tue Jun 14 22:20:23 2016 Ronan Boiteau
 */
 
 #include <fcntl.h>
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include "tools.h"
 
-char		*get_next_line(const int fd)
+char		*get_next_line(int fd)
 {
   char		*content;
   int		idx;
