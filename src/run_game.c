@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 20:20:01 2016 Ronan Boiteau
+** Last update Tue Jun 14 20:40:00 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -66,8 +66,8 @@ static int	find_letter(char *word, const char letter)
       if (word[idx] == letter)
 	{
 	  found = 1;
-	  word[idx] = CHAR_FOUND;
-	}	
+	  word[idx] = CHAR_HIDDEN;
+	}
       ++idx;
     }
   return (found);
@@ -84,7 +84,7 @@ static int	is_done(const char *word, const int try, char *input)
   idx = 0;
   while (word[idx])
     {
-      if (word[idx] != CHAR_FOUND)
+      if (word[idx] != CHAR_HIDDEN)
 	return (0);
       ++idx;
     }  

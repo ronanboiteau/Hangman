@@ -5,7 +5,7 @@
 ## Login   <boitea_r@epitech.net>
 ## 
 ## Started on  Tue Jun 14 18:57:34 2016 Ronan Boiteau
-## Last update Tue Jun 14 20:03:14 2016 Ronan Boiteau
+## Last update Tue Jun 14 20:40:36 2016 Ronan Boiteau
 ##
 
 NAME	= pendu
@@ -23,6 +23,7 @@ TOOLS	= $(SDIR)tools/
 SRCS	= $(SDIR)get_file.c				\
 	  $(SDIR)main.c					\
 	  $(SDIR)run_game.c				\
+	  $(SDIR)word.c					\
 	  $(TOOLS)get_next_line.c			\
 	  $(TOOLS)my_realloc.c				\
 	  $(TOOLS)puts.c
