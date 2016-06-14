@@ -5,20 +5,20 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:10:32 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:11:17 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:28:14 2016 Ronan Boiteau
 */
 
 #ifndef MSG_H_
 # define MSG_H_
 
-# define ERR_DICTIONARY		"Cannot retrieve dictionary!\n"
-# define ERR_MALLOC		"Out of memory!\n"
-# define ERR_FORBID_CHAR	"Dictionary contains forbidden letter: '*'\n"
-# define TOO_MANY_ARGS		"Too many arguments!\n"
-# define TOO_MANY_LETTERS	"Please enter a single letter!\n"
-# define ERR_NO_LETTER		"Please enter a letter!\n"
+# define ERR_DICTIONARY		"Impossible de récépérer le dictionnaire!\n"
+# define ERR_MALLOC		"Plus de mémoire!\n"
+# define ERR_FORBID_CHAR	"Lettre interdite dans le dictionnaire: '*'\n"
+# define TOO_MANY_ARGS		"Trop d'arguments!\n"
+# define TOO_MANY_LETTERS	"Merci d'entrer une seule lettre!\n"
+# define ERR_NO_LETTER		"Vous devez entrer une lettre!\n"
 # define LETTER_NOT_FOUND       ": n'est pas dans ce mot\n"
-# define NO_TRY_LEFT		"No try left, you lost!\n"
+# define NO_TRY_LEFT		"Plus d'essais, vous avez perdu!\n"
 # define MSG_WIN		"Felicitations!\n"
 
 #endif /* !MSG_H_ */
