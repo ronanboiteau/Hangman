@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 18:52:15 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:23:05 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:48:15 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -85,13 +85,12 @@ int		main(int argc, char **argv)
     return (1);
   if (!(file_content = get_file(argv[1])))
     {
-      my_putstr_fd(2, ERR_DICTIONARY);
+      my_putstr_fd(2, ERR_DIC_EMPTY);
       return (1);
     }
-  if (chk_file(file_content))
+  if (chk_file(file_content) || !(word = select_word(file_content)))
     return (1);
-  if (!(word = select_word(file_content))
-      || !(word_disp = init_word_disp(my_strlen(word))))
+  if (!(word_disp = init_word_disp(my_strlen(word))))
     {
       my_putstr_fd(2, ERR_MALLOC);
       return (1);

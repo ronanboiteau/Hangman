@@ -5,13 +5,13 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:10:32 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:28:14 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:46:58 2016 Ronan Boiteau
 */
 
 #ifndef MSG_H_
 # define MSG_H_
 
-# define ERR_DICTIONARY		"Impossible de récépérer le dictionnaire!\n"
+# define ERR_DIC_EMPTY		"Le dictionnaire est vide!\n"
 # define ERR_MALLOC		"Plus de mémoire!\n"
 # define ERR_FORBID_CHAR	"Lettre interdite dans le dictionnaire: '*'\n"
 # define TOO_MANY_ARGS		"Trop d'arguments!\n"

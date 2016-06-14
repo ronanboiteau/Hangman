@@ -5,12 +5,13 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:40:26 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:03:15 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:41:08 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include "pendu.h"
+#include "msg.h"
 #include "tools.h"
 
 static  int    	count_words(const char *file)
@@ -29,34 +30,20 @@ static  int    	count_words(const char *file)
   return (nb_words);
 }
 
-static int	get_word_size(const char *file, const int idx)
+static char	*get_word(const char *file, const int idx)
 {
   int		size;
+  int		tmp;
+  char		*word;
 
   size = 0;
   while (file[idx + size] && file[idx + size] != '\n')
     ++size;
-  return (size);
-}
-
-char		*select_word(const char *file)
-{
-  char		*word;
-  int		idx;
-  int		number;
-  int		tmp;
-
-  idx = 0;
-  tmp = 0;
-  number = rand() % (count_words(file));
-  while (file[idx] && tmp < number)
+  if (!(word = malloc(sizeof(char) * (size + 1))))
     {
-      if (file[idx] == '\n')
-	tmp++;
-      idx++;
+      my_putstr_fd(2, ERR_MALLOC);
+      return (NULL);
     }
-  if (!(word = malloc(sizeof(char) * (get_word_size(file, idx) + 1))))
-    return (NULL);
   tmp = 0;
   while (file[idx + tmp] && file[idx + tmp] != '\n')
     {
@@ -65,4 +52,28 @@ char		*select_word(const char *file)
     }
   word[tmp] = '\0';
   return (word);
+}
+
+char		*select_word(const char *file)
+{
+  char		*word;
+  int		idx;
+  int		number;
+  int		line;
+
+  idx = 0;
+  line = 0;
+  if (count_words(file) <= 0)
+    {
+      my_putstr_fd(2, ERR_DIC_EMPTY);
+      return (NULL);
+    }
+  number = rand() % (count_words(file));
+  while (file[idx] && line < number)
+    {
+      if (file[idx] == '\n')
+	line++;
+      idx++;
+    }
+  return (!(word = get_word(file, idx)) ? NULL : word);
 }

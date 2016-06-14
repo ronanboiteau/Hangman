@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:16:38 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:10:26 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:44:17 2016 Ronan Boiteau
 */
 
 #include <fcntl.h>
@@ -45,5 +45,5 @@ char		*get_file(const char *filepath)
 	return (failure(fd));
     }
   close(fd);
-  return (content);
+  return (idx == 0 ? NULL : content);
 }
