@@ -5,39 +5,13 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 20:40:00 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:01:10 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
 #include "msg.h"
 #include "pendu.h"
 #include "tools.h"
-
-
-
-
-
-
-
-
-
-
-
-
-#include <stdio.h>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 static int	chk_input(const char *input)
 {
@@ -54,7 +28,7 @@ static int	chk_input(const char *input)
   return (0);
 }
 
-static int	find_letter(char *word, const char letter)
+static int	find_letter(char *word, char *word_disp, const char letter)
 {
   int		idx;
   int		found;
@@ -67,20 +41,30 @@ static int	find_letter(char *word, const char letter)
 	{
 	  found = 1;
 	  word[idx] = CHAR_HIDDEN;
+	  word_disp[idx] = letter;
 	}
       ++idx;
     }
   return (found);
 }
 
-static int	is_done(const char *word, const int try, char *input)
+static int	is_done(const char *word,
+			const char *word_disp,
+			const int try,
+			char *input)
 {
   int		idx;
 
   free(input);
-  my_putstr(word);
+  my_putstr(word_disp);
   my_putchar('\n');
-  printf("%d\n\n", try);
+  my_putnbr(try);
+  my_putstr("\n\n");
+  if (try <= 0)
+    {
+      my_putstr_fd(2, NO_TRY_LEFT);
+      return (1);
+    }
   idx = 0;
   while (word[idx])
     {
@@ -88,16 +72,11 @@ static int	is_done(const char *word, const int try, char *input)
 	return (0);
       ++idx;
     }  
-  if (try <= 0)
-    {
-      my_putstr_fd(2, NO_TRY_LEFT);
-      return (1);
-    }
   my_putstr(MSG_WIN);
   return (1);
 }
 
-void		run_game(char *word, int try)
+void		run_game(char *word, char *word_disp, int try)
 {
   int		done;
   int		found;
@@ -106,7 +85,7 @@ void		run_game(char *word, int try)
   done = 0;
   while (!done)
     {
-      if (is_done(word, try, input))
+      if (is_done(word, word_disp, try, input))
 	return ;
       input = get_next_line(0);
       if (!chk_input(input))
@@ -114,7 +93,7 @@ void		run_game(char *word, int try)
 	  my_putstr("Votre caractere: ");
 	  my_putchar(input[0]);
 	  my_putchar('\n');
-	  if (!(found = find_letter(word, input[0])))
+	  if (!(found = find_letter(word, word_disp, input[0])))
 	    {
 	      my_putchar_fd(2, input[0]);
 	      my_putstr_fd(2, LETTER_NOT_FOUND);
