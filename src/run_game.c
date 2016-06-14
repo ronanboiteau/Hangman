@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:17:06 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:21:11 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -76,6 +76,14 @@ static int	is_done(const char *word,
   return (0);
 }
 
+static void	print_letter(const char letter)
+{
+  my_putstr("Votre caractere: ");
+  my_putchar(letter);
+  my_putchar('\n');
+  return ;
+}
+
 int		run_game(char *word, char *word_disp, int try)
 {
   int		done;
@@ -93,9 +101,7 @@ int		run_game(char *word, char *word_disp, int try)
 	return (0);
       if (!chk_input(input))
 	{
-	  my_putstr("Votre caractere: ");
-	  my_putchar(input[0]);
-	  my_putchar('\n');
+	  print_letter(input[0]);
 	  if (!(found = find_letter(word, word_disp, input[0])))
 	    {
 	      my_putchar_fd(2, input[0]);
