@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:40:26 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:02:15 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:03:15 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -48,7 +48,7 @@ char		*select_word(const char *file)
 
   idx = 0;
   tmp = 0;
-  number = rand() % ((count_words(file) + 1));
+  number = rand() % (count_words(file));
   while (file[idx] && tmp < number)
     {
       if (file[idx] == '\n')
