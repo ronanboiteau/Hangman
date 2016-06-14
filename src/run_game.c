@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:01:10 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:17:06 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -57,7 +57,7 @@ static int	is_done(const char *word,
 
   free(input);
   my_putstr(word_disp);
-  my_putchar('\n');
+  my_putstr("\nEssais: ");
   my_putnbr(try);
   my_putstr("\n\n");
   if (try <= 0)
@@ -69,25 +69,28 @@ static int	is_done(const char *word,
   while (word[idx])
     {
       if (word[idx] != CHAR_HIDDEN)
-	return (0);
+	return (-1);
       ++idx;
     }  
   my_putstr(MSG_WIN);
-  return (1);
+  return (0);
 }
 
-void		run_game(char *word, char *word_disp, int try)
+int		run_game(char *word, char *word_disp, int try)
 {
   int		done;
   int		found;
+  int		ret;
   char		*input;
 
+  input = NULL;
   done = 0;
   while (!done)
     {
-      if (is_done(word, word_disp, try, input))
-	return ;
-      input = get_next_line(0);
+      if ((ret = is_done(word, word_disp, try, input)) != -1)
+	return (ret);
+      if (!(input = get_next_line(0)))
+	return (0);
       if (!chk_input(input))
 	{
 	  my_putstr("Votre caractere: ");
@@ -101,4 +104,5 @@ void		run_game(char *word, char *word_disp, int try)
 	    }
 	}
     }
+  return (0);
 }

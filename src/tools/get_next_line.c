@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:14:16 2016 Ronan Boiteau
-** Last update Tue Jun 14 20:01:36 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:18:20 2016 Ronan Boiteau
 */
 
 #include <fcntl.h>
@@ -35,5 +35,5 @@ char		*get_next_line(const int fd)
       if (!(content = my_realloc(content, sizeof(char) * (idx + 2))))
 	return (NULL);
     }
-  return (content);
+  return (buf != '\n' && idx == 0 ? NULL : content);
 }

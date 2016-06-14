@@ -5,13 +5,15 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:10:32 2016 Ronan Boiteau
-** Last update Tue Jun 14 20:14:16 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:11:17 2016 Ronan Boiteau
 */
 
 #ifndef MSG_H_
 # define MSG_H_
 
 # define ERR_DICTIONARY		"Cannot retrieve dictionary!\n"
+# define ERR_MALLOC		"Out of memory!\n"
+# define ERR_FORBID_CHAR	"Dictionary contains forbidden letter: '*'\n"
 # define TOO_MANY_ARGS		"Too many arguments!\n"
 # define TOO_MANY_LETTERS	"Please enter a single letter!\n"
 # define ERR_NO_LETTER		"Please enter a letter!\n"

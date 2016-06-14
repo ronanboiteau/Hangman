@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 18:52:15 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:00:09 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:16:16 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -31,20 +31,6 @@ static int	chk_args(int argc, char **argv)
   return (0);
 }
 
-/* static int	check_file(const char *file) */
-/* { */
-/*   int		idx; */
-
-/*   idx = 0; */
-/*   while (file[idx]) */
-/*     { */
-/*       if (file[idx] == CHAR_HIDDEN) */
-/* 	return (1); */
-/*       idx++; */
-/*     } */
-/*   return (0); */
-/* } */
-
 static char	*init_word_disp(int size)
 {
   char		*word_disp;
@@ -59,25 +45,49 @@ static char	*init_word_disp(int size)
   return (word_disp);
 }
 
+static int	chk_file(const char *file)
+{
+  int		idx;
+
+  idx = 0;
+  while (file[idx])
+    {
+      if (file[idx] == CHAR_HIDDEN)
+	{
+	  my_putstr_fd(2, ERR_FORBID_CHAR);
+	  return (1);
+	}
+      idx++;
+    }
+  return (0);
+}
+
 int		main(int argc, char **argv)
 {
+  int		ret;
   char		*file_content;
   char		*word;
   char		*word_disp;
 
   srand(time(0));
   if (chk_args(argc, argv))
-    return (EXIT_FAILURE);
-  if (!(file_content = get_file(argv[1]))
-      || !(word = select_word(file_content))
-      || !(word_disp = init_word_disp(my_strlen(word))))
+    return (1);
+  if (!(file_content = get_file(argv[1])))
     {
       my_putstr_fd(2, ERR_DICTIONARY);
-      return (EXIT_FAILURE);
+      return (1);
+    }
+  if (chk_file(file_content))
+    return (1);
+  if (!(word = select_word(file_content))
+      || !(word_disp = init_word_disp(my_strlen(word))))
+    {
+      my_putstr_fd(2, ERR_MALLOC);
+      return (1);
     }
   free(file_content);
-  run_game(word, word_disp, NB_TRY);
+  ret = run_game(word, word_disp, NB_TRY);
   free(word_disp);
   free(word);
-  return (EXIT_SUCCESS);
+  return (ret);
 }
