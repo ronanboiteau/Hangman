@@ -5,7 +5,7 @@
 ## Login   <boitea_r@epitech.net>
 ## 
 ## Started on  Tue Jun 14 18:57:34 2016 Ronan Boiteau
-## Last update Tue Jun 14 19:07:07 2016 Ronan Boiteau
+## Last update Tue Jun 14 20:03:14 2016 Ronan Boiteau
 ##
 
 NAME	= pendu
@@ -16,10 +16,15 @@ CC	= gcc
 CFLAGS	+= -I include
 CFLAGS	+= -W -Wall -Wextra
 CFLAGS	+= -Werror
+CFLAGS	+= -g3
 
 SDIR	= src/
 TOOLS	= $(SDIR)tools/
-SRCS	= $(SDIR)main.c				\
+SRCS	= $(SDIR)get_file.c				\
+	  $(SDIR)main.c					\
+	  $(SDIR)run_game.c				\
+	  $(TOOLS)get_next_line.c			\
+	  $(TOOLS)my_realloc.c				\
 	  $(TOOLS)puts.c
 
 OBJS	= $(SRCS:.c=.o)
