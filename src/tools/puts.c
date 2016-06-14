@@ -5,19 +5,19 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:04:48 2016 Ronan Boiteau
-** Last update Tue Jun 14 22:20:38 2016 Ronan Boiteau
+** Last update Tue Jun 14 22:25:36 2016 Ronan Boiteau
 */
 
 #include <unistd.h>
 
 int	my_strlen(const char *str)
 {
-  int	i;
+  int	idx;
 
-  i = 0;
-  while (str[i])
-    i++;
-  return (i);
+  idx = 0;
+  while (str[idx])
+    idx++;
+  return (idx);
 }
 
 void	my_putchar(char letter)
