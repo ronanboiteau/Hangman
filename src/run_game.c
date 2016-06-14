@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:21:11 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:53:34 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -15,14 +15,9 @@
 
 static int	chk_input(const char *input)
 {
-  if (!input || !input[0])
+  if (!input || !input[0] || input[1])
     {
-      my_putstr_fd(2, ERR_NO_LETTER);
-      return (1);
-    }
-  if (input[1])
-    {
-      my_putstr_fd(2, TOO_MANY_LETTERS);
+      my_putstr_fd(2, ERR_LETTER);
       return (1);
     }
   return (0);
@@ -57,7 +52,7 @@ static int	is_done(const char *word,
 
   free(input);
   my_putstr(word_disp);
-  my_putstr("\nEssais: ");
+  my_putstr("\nEssai(s): ");
   my_putnbr(try);
   my_putstr("\n\n");
   if (try <= 0)
