@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 18:52:15 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:16:16 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:23:05 2016 Ronan Boiteau
 */
 
 #include <stdlib.h>
@@ -62,6 +62,17 @@ static int	chk_file(const char *file)
   return (0);
 }
 
+static int	free_and_leave(char *file_content,
+			       char *word_disp,
+			       char *word,
+			       int ret)
+{
+  free(file_content);
+  free(word_disp);
+  free(word);
+  return (ret);
+}
+
 int		main(int argc, char **argv)
 {
   int		ret;
@@ -85,9 +96,6 @@ int		main(int argc, char **argv)
       my_putstr_fd(2, ERR_MALLOC);
       return (1);
     }
-  free(file_content);
   ret = run_game(word, word_disp, NB_TRY);
-  free(word_disp);
-  free(word);
-  return (ret);
+  return (free_and_leave(file_content, word_disp, word, ret));
 }
