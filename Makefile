@@ -5,7 +5,7 @@
 ## Login   <boitea_r@epitech.net>
 ## 
 ## Started on  Tue Jun 14 18:57:34 2016 Ronan Boiteau
-## Last update Tue Jun 14 21:35:23 2016 Ronan Boiteau
+## Last update Tue Jun 14 21:49:36 2016 Ronan Boiteau
 ##
 
 NAME	= pendu
@@ -16,7 +16,6 @@ CC	= gcc
 CFLAGS	+= -I include
 CFLAGS	+= -W -Wall -Wextra
 CFLAGS	+= -Werror
-CFLAGS	+= -g3
 
 SDIR	= src/
 TOOLS	= $(SDIR)tools/
