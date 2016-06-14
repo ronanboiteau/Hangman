@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:53:34 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:57:53 2016 jamet alexis
 */
 
 #include <stdlib.h>
@@ -66,7 +66,7 @@ static int	is_done(const char *word,
       if (word[idx] != CHAR_HIDDEN)
 	return (-1);
       ++idx;
-    }  
+    }
   my_putstr(MSG_WIN);
   return (0);
 }

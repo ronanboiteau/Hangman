@@ -5,7 +5,7 @@
 ** Login   <boitea_r@epitech.net>
 ** 
 ** Started on  Tue Jun 14 20:40:26 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:41:08 2016 Ronan Boiteau
+** Last update Tue Jun 14 21:59:07 2016 jamet alexis
 */
 
 #include <stdlib.h>
@@ -14,7 +14,7 @@
 #include "msg.h"
 #include "tools.h"
 
-static  int    	count_words(const char *file)
+static  int	count_words(const char *file)
 {
   int		nb_words;
   int		idx;
