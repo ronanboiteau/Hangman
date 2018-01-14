@@ -62,14 +62,6 @@ static int	is_done(const char *word,
   return (0);
 }
 
-static void	print_letter(const char letter)
-{
-  my_putstr("Your letter: ");
-  my_putchar(letter);
-  my_putchar('\n');
-  return ;
-}
-
 int		run_game(char *word, char *word_disp, int try)
 {
   int		done;
@@ -83,12 +75,11 @@ int		run_game(char *word, char *word_disp, int try)
     {
       if ((ret = is_done(word, word_disp, try, input)) != -1)
 	return (ret);
-      my_putstr("Enter a letter: ");
+      my_putstr("Your letter: ");
       if (!(input = get_next_line(0)))
 	return (0);
       if (!chk_input(input))
 	{
-	  print_letter(input[0]);
 	  if (!(found = find_letter(word, word_disp, input[0])))
 	    {
 	      my_putchar_fd(2, input[0]);
