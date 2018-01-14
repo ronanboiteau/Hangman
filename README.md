@@ -1,6 +1,6 @@
 # Hangman
 
-C [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) game.
+C command-line [Hangman](https://en.wikipedia.org/wiki/Hangman_(game)) game.
 
 ## Requirements
 
