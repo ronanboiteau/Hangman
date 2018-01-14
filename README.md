@@ -13,7 +13,9 @@ Navigate to the root of the repository from your Terminal and run `make` to buil
 
 ## How to use Hangman?
 
-The `hangman` executable expects a dictionary file as argument. Example:
+The `hangman` executable expects a dictionary file as argument.
+
+Example:
 
 ```
 ./hangman samples/dict1.txt
@@ -42,7 +44,10 @@ Your letter:
 
 You can find dictionary files samples in the `samples/` folder.
 
-A dictionary is basically a list of word separated by new lines (`\n`). Example:
+A dictionary is basically a list of word separated by new lines (`\n`).
+
+Example:
+
 ```
 hospitality
 chance
