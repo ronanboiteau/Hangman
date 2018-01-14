@@ -41,10 +41,11 @@ static int	is_done(const char *word,
   int		idx;
 
   free(input);
+  my_putstr("\n");
   my_putstr(word_disp);
   my_putstr("\nTries: ");
   my_putnbr(try);
-  my_putstr("\n\n");
+  my_putstr("\n");
   if (try <= 0)
     {
       my_putstr_fd(2, NO_TRY_LEFT);
@@ -82,6 +83,7 @@ int		run_game(char *word, char *word_disp, int try)
     {
       if ((ret = is_done(word, word_disp, try, input)) != -1)
 	return (ret);
+      my_putstr("Enter a letter: ");
       if (!(input = get_next_line(0)))
 	return (0);
       if (!chk_input(input))
