@@ -27,7 +27,7 @@ Beginning of a game example:
 *******
 Tries: 10
 Your letter: a
-a: is not in the word.
+a is not in the word.
 
 *******
 Tries: 9
