@@ -1,16 +1,6 @@
-/*
-** run_game.c for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 19:41:36 2016 Ronan Boiteau
-** Last update Tue Jun 14 22:19:44 2016 Ronan Boiteau
-*/
-
 #include <stdlib.h>
 #include "msg.h"
-#include "pendu.h"
+#include "hangman.h"
 #include "tools.h"
 
 static int	chk_input(const char *input)
@@ -52,7 +42,7 @@ static int	is_done(const char *word,
 
   free(input);
   my_putstr(word_disp);
-  my_putstr("\nEssai(s): ");
+  my_putstr("\nTries: ");
   my_putnbr(try);
   my_putstr("\n\n");
   if (try <= 0)
@@ -73,7 +63,7 @@ static int	is_done(const char *word,
 
 static void	print_letter(const char letter)
 {
-  my_putstr("Votre caractere: ");
+  my_putstr("Your letter: ");
   my_putchar(letter);
   my_putchar('\n');
   return ;

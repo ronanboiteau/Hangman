@@ -1,13 +1,3 @@
-/*
-** my_realloc.c for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 19:15:10 2016 Ronan Boiteau
-** Last update Tue Jun 14 22:20:30 2016 Ronan Boiteau
-*/
-
 #include <stdlib.h>
 
 char		*my_realloc(char *old_str, size_t size)

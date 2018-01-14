@@ -1,17 +1,7 @@
-/*
-** main.c for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 18:52:15 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:48:15 2016 Ronan Boiteau
-*/
-
 #include <stdlib.h>
 #include <time.h>
 #include "msg.h"
-#include "pendu.h"
+#include "hangman.h"
 #include "tools.h"
 
 static int	chk_args(int argc, char **argv)
@@ -20,7 +10,7 @@ static int	chk_args(int argc, char **argv)
     {
       my_putstr_fd(2, "Usage: ");
       my_putstr_fd(2, argv[0]);
-      my_putstr_fd(2, " dictionary\n");
+      my_putstr_fd(2, " [dictionary file]\n");
       return (1);
     }
   if (argc > 2)

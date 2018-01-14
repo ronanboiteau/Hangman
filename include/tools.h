@@ -1,13 +1,3 @@
-/*
-** tools.h for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 19:05:39 2016 Ronan Boiteau
-** Last update Tue Jun 14 22:21:05 2016 Ronan Boiteau
-*/
-
 #ifndef TOOLS_H_
 # define TOOLS_H_
 

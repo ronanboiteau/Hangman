@@ -1,13 +1,3 @@
-/*
-** get_file.c for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 19:16:38 2016 Ronan Boiteau
-** Last update Tue Jun 14 21:44:17 2016 Ronan Boiteau
-*/
-
 #include <fcntl.h>
 #include <stdlib.h>
 #include <sys/stat.h>

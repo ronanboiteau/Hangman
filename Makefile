@@ -1,32 +1,25 @@
-##
-## Makefile for pendu in /home/boitea_r/CPE_colle_semaine8
-## 
-## Made by Ronan Boiteau
-## Login   <boitea_r@epitech.net>
-## 
-## Started on  Tue Jun 14 18:57:34 2016 Ronan Boiteau
-## Last update Tue Jun 14 21:49:36 2016 Ronan Boiteau
-##
-
-NAME	= pendu
+NAME	= hangman
 
 RM	= rm -f
 
 CC	= gcc
-CFLAGS	+= -I include
-CFLAGS	+= -W -Wall -Wextra
-CFLAGS	+= -Werror
+CFLAGS	+= -I include/
+CFLAGS	+= -W -Wall -Wextra -Werror
 
-SDIR	= src/
-TOOLS	= $(SDIR)tools/
-SRCS	= $(SDIR)get_file.c				\
-	  $(SDIR)main.c					\
-	  $(SDIR)run_game.c				\
-	  $(SDIR)word.c					\
-	  $(TOOLS)get_next_line.c			\
-	  $(TOOLS)my_realloc.c				\
-	  $(TOOLS)my_putnbr.c				\
-	  $(TOOLS)puts.c
+TOOLS_DIR	= tools/
+TOOLS_FILES	= get_next_line.c		\
+		  my_realloc.c			\
+		  my_putnbr.c			\
+		  puts.c
+TOOLS		= $(addprefix $(TOOLS_DIR), $(TOOLS_FILES))
+
+SRCS_DIR	= src/
+SRCS_FILES	= get_file.c		\
+		  main.c		\
+		  run_game.c		\
+		  word.c		\
+		  $(TOOLS)
+SRCS		= $(addprefix $(SRCS_DIR), $(SRCS_FILES))
 
 OBJS	= $(SRCS:.c=.o)
 

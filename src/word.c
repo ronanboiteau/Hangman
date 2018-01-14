@@ -1,20 +1,10 @@
-/*
-** word.c for pendu in /home/boitea_r/CPE_colle_semaine8
-** 
-** Made by Ronan Boiteau
-** Login   <boitea_r@epitech.net>
-** 
-** Started on  Tue Jun 14 20:40:26 2016 Ronan Boiteau
-** Last update Tue Jun 14 22:19:27 2016 Ronan Boiteau
-*/
-
 #include <stdlib.h>
 #include <unistd.h>
-#include "pendu.h"
+#include "hangman.h"
 #include "msg.h"
 #include "tools.h"
 
-static  int	count_words(const char *file)
+static int	count_words(const char *file)
 {
   int		nb_words;
   int		idx;
