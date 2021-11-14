@@ -61,7 +61,3 @@ knock
 instrument
 ```
 
-## Authors
-
-* **Alexis Jamet**
-* **Ronan Boiteau** ([GitHub](https://github.com/ronanboiteau) / [LinkedIn](https://www.linkedin.com/in/ronanboiteau/))
